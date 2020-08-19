@@ -17,7 +17,8 @@ const renderItem = (item) => {
         Array.from(mealList.children).forEach(x => x.classList.remove("selected"))
         elemento.classList.add("selected")
         const mealsIdInput = document.getElementById("meal-id")
-        mealsIdInput.value = item._id
+        // cambié el item._id por elemento.getAttribute("data-id"), me pareció mas correcto ya que el evento es al elemento
+        mealsIdInput.value = elemento.getAttribute("data-id") 
     })
     return elemento
 }
@@ -172,18 +173,28 @@ const renderLogin = () => {
     })
 }
 
-const deleteFetchOrder = () => {
-// fetch("https://serverless.marianogarmendia.vercel.app/api/orders)
+// Borrando orden de base de datos, LO HICE!!!
 
+const deleteFetchOrder = (elementDel) => {
+    const token = localStorage.getItem("token")
+     fetch("https://serverless.marianogarmendia.vercel.app/api/orders/"+elementDel,{
+            method: "DELETE",
+            headers: {
+                "content-type" : "application/json",
+                authorization: token,
+                id: elementDel,
+            },
+     })
+     
 }
 
-
+// element es el id de la orden que quiero borrar al darle click el usuario
 const deleteOrder = (element) => {
     if (element.name === "borrar"){
         const elementDelete = element.parentElement.getAttribute("data-id")
         element.parentElement.parentElement.remove();
 
-        // deleteFetchOrder(elementDelete)
+        deleteFetchOrder(elementDelete)
     }
 }
 
