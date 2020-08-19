@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="main.css" type="text/css"/>
+    <!-- FONTS ROBOTO -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- BOOTSTRAP  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Almuerzi web</title>
+</head>
+<body>
+    <div id="app" class="app"></div>
+
+    <!-- HOME PAGE -->
+    <template id="home">
+        <nav class="navbar navbar-light bg-light">
+            <a href="#" class="navbar-brand">
+                Almuerzi App
+            </a>
+            <a href="#" id="logueate">Login</a>
+       </nav>
+    </template> 
+
+    <!-- *** FORMULARIO DE LOGIN *** -->
+    <template id="login-template">
+        <nav class="navbar navbar-light bg-light">
+            <a href="#" class="navbar-brand">
+                Almuerzi App
+            </a>
+            <!-- <a href="#" id="logueate">Login</a> -->
+       </nav>
+    <section class="container-form">
+        <img src="img/undraw_healthy_options_sdo3.png" alt="">   
+        <div class="form-main">
+            <p class="form-title">Inicia sesión</p>
+            <form action="#" class="login-form" id="login-form">
+                <input  id="usuario" placeholder="Nombre de usuario"/>
+                </br>
+                <input type="password" id="contraseña" placeholder="Contraseña"/>
+                </br>
+                <span><a href="#">¿No estás registrado? Dale click aquí</a></span>
+                <button class="btn-fire" type="submit" value="Ingresá">Ingresá</button>
+            </form>
+        </div>
+    </section>
+    </template>
+
+    <!-- FORMULARIO REGISTER -->
+    <template id="register-template">
+        <div class="form-main">
+            <p class="form-title">Registrate</p>
+            <form action="#" class="login-form" id="register-form">
+                <input  id="usuario" placeholder="Nombre de usuario"/>
+                </br>
+                <input type="password" id="contraseña" placeholder="Contraseña"/>
+                </br>
+                <button class="btn-fire" type="submit" value="Ingresá">Enviar</button>
+            </form>
+        </div>
+        </template>
+
+
+
+    <!-- ORDER Y MEALS -->
+
+    <template id="orders-view">
+        <nav class="navbar navbar-light bg-light">
+            <a href="#" class="navbar-brand">
+                Almuerzi App
+            </a>
+       </nav>
+        <div class="contenedor">
+                <div class="menu row pt-5">
+                    <div id="meals" class="meals col-4" >
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Menu del dia</h4>
+                            </div>
+                            <ul id="meals-list" class="pt-5">
+                                <p id="cargando">Dame 2 segundos...</p>
+                            </ul>
+                            <form id="order">
+                                <input id="meal-id" type="hidden"/>
+                                <input id="submit" class="btn-fire" type="submit" disabled />
+                            </form>
+                        </div>
+                    </div>
+                    <div id="orders" class="orders col-8 ">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Pedidos</h4>
+                            </div>
+                        </div>
+                        <div id="orders-list">
+                            <p>Dame 2 segundos...</p>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div> 
+     </template>
+</body>
+<!-- BOOTSTRAP JQUERY AND POPPER -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<!-- BOOTSTRAP -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<!-- INTERFACE -->
+<script src="main.js"></script>
+</html>

@@ -1,0 +1,11 @@
+NOTAS:
+- En el main.js nosotros estamos renderizando nuestra pagina, luego manipulando el dom y tambien enviando nuestro pedido a traves de eventos "click" y "onsubmit". 
+- Lo primero que hacemos es llamar a fetch pasandole nuestra url del servidor (por default fetch tiene el method de GET), esto lo que va a hacer es traernos lo que nosotros tenemos cargado en nuestra base de datos, (los elementos listados) 
+- Mientras esperamos nuestra peticion debemos tener "disabled" nuestro boton de submit como asi tambien un texto de cargando en la pagina
+- Una vez que la peticion llegue (.then(data => {"le paso lo que quiera ejecutar"}) 
+- va a habilitar el boton y va a reemplazar el texto cargando por lo que llega de fetch
+- Lo que llega de fetch llega como un Json (lo cual debo indicarle en el primer .then)(.then(response => response.Json())
+- A este json debo extraerle el id y el name, darle estructura de html , insertarlo al dom
+- En el evento click debo extraer su id enviandolo a un elemento 
+- En el evento onsubmit debo acceder a ese id e instertarlo a una variable, para luego pasarle de esa variable a otra la cual la voy a poner
+en un objeto el cual será la orden a enviar y contendra el meal_id y el user_id al cual pertenece el pedido
